@@ -109,7 +109,7 @@ function App() {
                 onClick={handleRetry}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium transition-colors duration-200"
               >
-                Try Again
+                Please Try Again
               </button>
             </div>
           </div>
