@@ -35,6 +35,9 @@ pipeline {
         stage('Run with Docker Compose') {
             steps {
                 sh '''
+                echo "Stopping any existing containers"
+                docker compose down || true
+
                 echo "Starting MERN app with Docker Compose"
                 docker compose up -d --no-build
 
