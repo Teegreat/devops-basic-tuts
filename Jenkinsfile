@@ -36,7 +36,8 @@ pipeline {
             steps {
                 sh '''
                 echo "Stopping any existing containers"
-                docker compose down || true
+                docker compose down --remove-orphans --volumes || true
+                docker rm -f backend frontend mongo 2>/dev/null || true
 
                 echo "Starting MERN app with Docker Compose"
                 docker compose up -d --no-build
