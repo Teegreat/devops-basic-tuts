@@ -11,6 +11,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    image: mern-backend:jenkins
     container_name: backend
     restart: unless-stopped
     env_file:
@@ -28,6 +29,7 @@ services:
       dockerfile: Dockerfile
       args:
         VITE_API_URL: ${VITE_API_URL:-http://localhost:5000/api}
+    image: mern-frontend:jenkins
     container_name: frontend
     restart: unless-stopped
     ports:
