@@ -36,7 +36,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Starting MERN app with Docker Compose"
-                docker compose up -d
+                docker compose up -d --no-build
 
                 echo "showing running containers"
                 docker ps
