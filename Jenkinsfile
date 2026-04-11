@@ -37,6 +37,8 @@ pipeline {
                 sh '''
                 echo "Stopping any existing containers"
                 docker compose down || true
+                docker ps -q --filter "publish=5000" | xargs -r docker stop || true
+                docker ps -q --filter "publish=5173" | xargs -r docker stop || true
 
                 echo "Starting MERN app with Docker Compose"
                 docker compose up -d --no-build
